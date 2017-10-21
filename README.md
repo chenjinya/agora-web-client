@@ -8,7 +8,7 @@
 
 ## 服务器架设指南
 
-本地搭建简易的 Https Nginx 静态服务器
+本地搭建简易的 Https Nginx 静态服务器 （!不是https的服务器也可以使用Agora web client)
 
 ### 一，生成证书
 ```
@@ -72,6 +72,7 @@ server {
 2. `AgoraRTC`的 `init` 需要 appId ,  `join` 需要channelKey
 3. `stream`的`play`方法传入HTML Element Id，SDK会自动创建DOM
 4. user id 需要是纯数字， channel id 需要是字符串
+5. 当快速切换频道的时候 client 会有问题，应该是leave和join异步执行顺序导致的bug，所以如果需要快速的 leave 然后 join，最好是leave 了之后 timeout 1s 再 join
 
 ## 常见错误
 | Name        | Code           | Comment  | Explain |
