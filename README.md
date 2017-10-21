@@ -74,11 +74,11 @@ server {
 4. user id 需要是纯数字， channel id 需要是字符串
 
 ## 常见错误
-| Name        | Code           | Comment  ||
-| ------------- |:-------------:| -----:|
-| ERR_INVALID_ARGUMENT | 	2	 | API调用了无效的参数。例如指定的频道名含有非法字符。 |一般是参数错误|
-|WARN_LOOKUP_CHANNEL_REJECTED	|105|	查找频道请求被服务器拒绝。服务器可能没有办法处理这个请求或请求是非法的。|一般是channelKey的问题|
-|‘SERVICE_NOT_AVAILABLE’|	-| 服务不可用|一般是appId的问题|
+| Name        | Code           | Comment  | Explain |
+| -- |--| -- | -- |
+| ERR_INVALID_ARGUMENT | 2 | API调用了无效的参数。例如指定的频道名含有非法字符。 | 一般是参数错误 |
+|WARN_LOOKUP_CHANNEL_REJECTED |105| 查找频道请求被服务器拒绝。服务器可能没有办法处理这个请求或请求是非法的。|一般是channelKey的问题 |
+|‘SERVICE_NOT_AVAILABLE’| - | 服务不可用 | 一般是appId的问题 |
 
 官网错误说明 [错误代码和警告代码](https://docs.agora.io/cn/user_guide/troubleshooting/error.html)
 
