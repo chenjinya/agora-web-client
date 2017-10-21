@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Agora Web Sample</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <script src="AgoraRTCSDK-1.13.0.js"></script>
+    <script src="vendor/jquery.js"></script>
+    <style>
+        video {
+            background: #000;
+        }
+
+        .inline-alert {
+            display: inline-block;
+            margin: 5px;
+        }
+        .video-local {
+            width: 320px;
+            height: 240px;
+        }
+        .video-remote {
+            width: 320px;
+            height: 240px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Agora Web Client</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Client <span class="sr-only">(current)</span></a></li>
+           
+            </ul>
+            <form class="navbar-form navbar-left">
+            <!-- <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button> -->
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Github</a></li>
+         
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+
+        <div class="row" >
+            <div class="col-md-6">
+                <div  class="panel panel-default">
+                    <div class="panel-heading">Options</div>
+                    <div class="panel-body">
+                        <div >
+                            <div class="form-group">
+                                <label for="audioSource">Audio source: </label>
+                                <select class="form-control" select-audio-source id="audioSource"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="videoSource">Video source: </label>
+                                <select class="form-control" select-video-source id="videoSource"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="appId">App Id: </label>
+                                <input class="form-control" input-app-id id="appId" readonly placeholder="<As Default Value>" value="" ></input>
+                            </div>
+                            <div class="form-group">
+                                <label for='channel' >Channel Id:</label> 
+                                <input class='form-control' input-channel-id id="channelId" placeholder="<Channel Id>" type="text" value="" ></input>
+                            </div>
+                            <div class="form-group">
+                                <label for='userId' >User Id:</label> 
+                                <input class='form-control' input-user-id id="userId" placeholder="<User Id>" type="text" value="" ></input>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input checkbox-is-host  type="checkbox"> Output Video and Audit
+                                </label>
+                            </div>
+                                
+                            <button id="join" btn-join class="btn btn-success" >Join</button>
+                            <button id="leave" disabled btn-leave class="btn btn-warning" >Leave</button>
+                            <button id="publish" disabled btn-publish class="btn btn-primary" >Publish</button>
+                            <button id="unpublish" disabled btn-unpublish class="btn btn-danger" >Unpublish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" >
+                <div class="panel panel-default" >
+                    <div class="panel-heading">Status Check</div>
+                    <div class="panel-body" agora-status-check-wrap ></div>
+                </div>
+            </div>
+        </div>
+       
+       
+                
+        <!-- <div id="localVideo" ></div> -->
+        <div id="video_local" class='video-local' ></div>
+        <div id="video_remote" video-remote-wrap > </div>
+
+      
+    </div>
+<script language="javascript" src="./vendor/bootstrap/js/bootstrap.min.js" ></script>
+<script language="javascript" src="./app.js" >
+
+</script>
+</body>
+</html>
