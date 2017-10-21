@@ -62,9 +62,9 @@ server {
 
 ## 初始化
 
-1. 需要在 `app.js`里面填写默认的获取ChannelKey的 url地址, 如果没有使用 Dynamic Key， ,注释掉或者相关获取key代码即可。(没有测试过 signalingKey)
-1. 需要在 `index.html`里面填写默认的AppId
-1. 为了测试方便，可在 `index.html` 里面把 Channel Id 和 User Id 都写上默认值
+1. 需要在 `app.js`里面填写默认的获取ChannelKey的 url地址(<key url>), 如果没有使用 Dynamic Key， ,注释或者修改相关获取key代码即可。(没有测试过 signalingKey)
+1. 需要在 `index.html`里面填写默认的AppId(<App Id>)
+1. 为了测试方便，可在 `index.html` 里面把 Channel Id (<Channel Id>和 User Id(<User Id>) 都写上默认值
 
 ## 注意点
 
