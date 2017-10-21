@@ -82,4 +82,6 @@ server {
 
 官网错误说明 [错误代码和警告代码](https://docs.agora.io/cn/user_guide/troubleshooting/error.html)
 
+## 预览
 
+![预览](./capture.png)
