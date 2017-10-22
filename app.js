@@ -245,7 +245,7 @@ App.prototype = {
                 console.log("User " + streamID + " join channel successfully");
                 this.appendCheckStatus("Join channel successfully");
 
-                if ($('input[checkbox-is-host]')[0].checked) {
+                if (this.isHost) {
                     let camera = this.$videoWrap.val();
                     let microphone = this.$audioWrap.val();
                     console.log('AgoraRTC.createStream');
