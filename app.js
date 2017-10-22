@@ -33,10 +33,11 @@ App.prototype = {
             statusIconClassName = 'glyphicon-remove-sign'
         }
 
-        let html = '<div class="alert '+ statusClassName +' inline-alert" role="alert">' 
-        + '  <span class="glyphicon '+ statusIconClassName + '" aria-hidden="true"></span>' 
-        + '<span> ' + word + '</span>' + 
-        '</div>';
+        let html = `
+        <div class="alert ${statusClassName} inline-alert" role="alert">
+            <span class="glyphicon ${statusIconClassName}" aria-hidden="true"></span>
+            <span> ${word}</span>
+        </div>`;
         this.$statusWrap.append(html);
         
     },
@@ -127,15 +128,17 @@ App.prototype = {
             let stream = evt.stream;
             console.log("Subscribe remote stream successfully: " + stream.getId());
             if ($('#video_remote_'+stream.getId()).length === 0) {
-                $('[video-remote-wrap]').append('<div class="video-remote" id="video_remote_'+stream.getId()+'" "></div>');
+                $('[video-remote-wrap]').append(`
+                <div class="video-remote" id="video_remote_${stream.getId()}"></div>
+                `);
             }
-            stream.play('video_remote_' + stream.getId());
+            stream.play(`video_remote_${stream.getId()}`);
         });
     
         client.on('stream-removed', function (evt) {
             let stream = evt.stream;
             stream.stop();
-            $('#video_remote_'+stream.getId()).remove();
+            $(`#video_remote_${stream.getId()}`).remove();
             console.log("Remote stream is removed " + stream.getId());
         });
     
@@ -143,7 +146,7 @@ App.prototype = {
             let stream = evt.stream;
             if (stream) {
                 stream.stop();
-                $('#video_remote_'+stream.getId()).remove();
+                $(`#video_remote_${stream.getId()}`).remove();
                 console.log(evt.uid + " leaved from this channel");
             }
         });
@@ -171,7 +174,7 @@ App.prototype = {
             if(this.audioList.length) {
                 this.appendCheckStatus('Audio device ok');
                 for(let v of this.audioList) {
-                    this.$audioWrap.append('<option value="'+ v.value +'" >' + v.text+ '</option>');
+                    this.$audioWrap.append(`<option value="${v.value}" >${v.text}</option>`);
                 }
             } else {
                 this.appendCheckStatus('Audio device disabled', 2);
@@ -180,7 +183,7 @@ App.prototype = {
             if(this.videoList.length) {
                 this.appendCheckStatus('Video device ok');
                 for(let v of this.videoList) {
-                    this.$videoWrap.append('<option value="'+ v.value +'" >' + v.text+ '</option>');
+                    this.$videoWrap.append(`<option value="${v.value}" >${v.text}</option>`);
                 }
             } else {
                 this.appendCheckStatus('Audio device disabled', 2);
@@ -297,6 +300,7 @@ App.prototype = {
     }
       
 }
+
 
 $(document).ready(function(){
     const app = new App();
