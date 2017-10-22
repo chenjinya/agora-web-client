@@ -298,7 +298,6 @@ App.prototype = {
       
 }
 
-
 $(document).ready(function(){
     const app = new App();
 });

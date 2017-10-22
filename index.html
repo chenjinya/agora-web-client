@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <title>Agora Web Sample</title>
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <script src="AgoraRTCSDK-1.13.0.js"></script>
-    <script src="vendor/jquery.js"></script>
     <style>
         video {
             background: #000;
@@ -91,6 +89,13 @@
                             <button id="publish" disabled btn-publish class="btn btn-primary" >Publish</button>
                             <button id="unpublish" disabled btn-unpublish class="btn btn-danger" >Unpublish</button>
                         </div>
+
+                        
+                        
+                    </div>
+                    <div class="panel-heading">Local Video</div>
+                    <div class="panel-body">
+                        <div id="video_local" class='video-local' ></div>
                     </div>
                 </div>
             </div>
@@ -103,10 +108,19 @@
         </div>
        
        
-        <div id="video_local" class='video-local' ></div>
-        <div id="video_remote" video-remote-wrap > </div>
+
+        <div class="panel panel-default" >
+            <div class="panel-heading">Remote Video</div>
+            <div class="panel-body">
+                <div id="video_remote" video-remote-wrap > </div>
+            </div>
+        </div>
+        
+        
     </div>
-    <script  src="./vendor/bootstrap/js/bootstrap.min.js" ></script>
-    <script  src="./app.js" ></script>
+    <script src="AgoraRTCSDK-1.13.0.js"></script>
+    <script src="vendor/jquery.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js" ></script>
+    <script src="./app.js" ></script>
 </body>
 </html>
