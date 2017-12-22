@@ -4,7 +4,7 @@
 
 ## 声网 Web API 
 
-点击这里去官网 [Web API - WebRTC ](https://docs.agora.io/cn/user_guide/API/webrtc_interop_api.html) 
+点击这里去官网 [Web API - WebRTC ](https://docs.agora.io/cn/2.0.2/product/Video/API%20Reference/web_API_video?platform=Web) 
 
 ## 服务器架设指南
 
@@ -68,7 +68,7 @@ server {
 
 ## 注意点
 
-1. 确认Channel Key的生成方式，静态或者动态，参照官网 [密钥用户指南](https://docs.agora.io/cn/user_guide/Component_and_Others/Dynamic_Key_User_Guide.html)
+1. 确认Channel Key的生成方式，静态或者动态，参照官网 [密钥用户指南](https://docs.agora.io/cn/2.0.2/product/Video/Product%20Overview/key#channel-key)
 2. `AgoraRTC`的 `init` 需要 appId ,  `join` 需要channelKey
 3. `stream`的`play`方法传入HTML Element Id，SDK会自动创建DOM
 4. user id 需要是纯数字， channel id 需要是字符串
@@ -81,8 +81,12 @@ server {
 |WARN_LOOKUP_CHANNEL_REJECTED |105| 查找频道请求被服务器拒绝。服务器可能没有办法处理这个请求或请求是非法的。|一般是channelKey的问题 |
 |‘SERVICE_NOT_AVAILABLE’| - | 服务不可用 | 一般是appId的问题 |
 
-官网错误说明 [错误代码和警告代码](https://docs.agora.io/cn/user_guide/troubleshooting/error.html)
+官网错误说明 [错误代码和警告代码](https://docs.agora.io/cn/2.0.2/faq/faq/error_web)
 
 ## 预览
 
 ![预览](./capture.png)
+
+## 闲扯
+
+2个月没看官网了，发现大换血，文档变得好看多了。SDK也升级到了2.0。声网爸爸真是勤劳！
