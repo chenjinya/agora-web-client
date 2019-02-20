@@ -46,8 +46,7 @@ App.prototype = {
 
         let app_id = $('input[input-app-id]').val();
 
-        this.appId = app_id ? app_id.toString() : null;
-
+        this.appId = app_id ? app_id.toString() : "";
         this.client = AgoraRTC.createClient({
             mode: 'interop'
         });
@@ -59,8 +58,8 @@ App.prototype = {
         },  (err) => {
             console.log("AgoraRTC client init failed", err);
             this.appendCheckStatus('AgoraRTC client init failed: ' + err, 3);
-            
         });
+        
         this.bindEvent();
         this.bindClientEvent();
         this.getDevices();
